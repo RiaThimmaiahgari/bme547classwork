@@ -13,7 +13,7 @@ def interface():
     return 
    
 def accept_input(test_result):
-    entry = input("Enter the {} test result".format(test_result))
+    entry = input("Enter the {} test result: ".format(test_result))
     return int(entry)
 
 def print_result(test_name, test_value, test_class):
