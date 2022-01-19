@@ -54,4 +54,13 @@ def LDL_driver():
     classification = check_LDL(LDL_value)
     print_result("LDL", LDL_value, classification)
 
+def check_cholesterol(chol_value):
+    if chol_value<200:
+        answer = "Normal"
+    elif 239 >= chol_value >= 200:
+        answer = "Borderline High"
+    else:
+        answer = "High"
+    return answer
+
 interface()
