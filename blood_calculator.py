@@ -63,4 +63,9 @@ def check_cholesterol(chol_value):
         answer = "High"
     return answer
 
+def cholesterol_driver():
+    chol_value = accept_input("Total Cholesterol")
+    classification= check_cholesterol(chol_value)
+    print_result("Total Cholesterol", chol_value, classification)
+
 interface()
