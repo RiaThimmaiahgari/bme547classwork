@@ -3,8 +3,8 @@
 import pytest
 
 @pytest.mark.parametrize("tuple1, tuple2, expected", [
-    [(3, 2), (1, 4), -1],
-    [(5, 6), (4, 3), 3]
+    [(3, 2), (1, 4), -1.0],
+    [(5, 6), (4, 3), 3.0]
     ])
 def test_calculate_slope(tuple1, tuple2, expected):
     from linear_coordinates import calculate_slope
@@ -13,8 +13,8 @@ def test_calculate_slope(tuple1, tuple2, expected):
 
 
 @pytest.mark.parametrize("tuple1, slope, expected", [
-    [(3, 2), -1, 5],
-    [(5, 6), 3, -9]
+    [(3, 2), -1, 5.0],
+    [(5, 6), 3, -9.0]
     ])
 def test_calculate_intercept(tuple1, slope, expected):
     from linear_coordinates import calculate_intercept
@@ -22,11 +22,12 @@ def test_calculate_intercept(tuple1, slope, expected):
     assert answer == expected
 
 
-@pytest.mark.parametrize("slope, intercept, x_val, expected", [
-    [-1, 5, 3, 2],
-    [3, -9, 5, 6]
+@pytest.mark.parametrize("tuple1, tuple2, x_val, expected", [
+    [(3, 2), (1, 4), 2, 3.0],
+    [(5, 6), (4, 3), 1, -6.0]
     ])
-def test_calculate_yval(slope, intercept, x_val, expected):
+def test_calculate_yval(tuple1, tuple2, x_val, expected):
     from linear_coordinates import calculate_yval
-    answer = calculate_yval(slope, intercept, x_val)
+    answer = calculate_yval(tuple1, tuple2, x_val)
     assert answer == expected
+
